@@ -3,7 +3,7 @@ import { CanLoad, Router } from '@angular/router';
 import { Plugins } from '@capacitor/core';
 const { Storage } = Plugins;
 
-export const INTRO_KEY = 'driver-intro';
+export const INTRO_KEY = 'base-intro';
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inside</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="full" (click)="getData()">Get data</ion-button>
+  <ion-card>
+    <ion-card-content>
+      <p *ngIf="secretData">
+        {{ secretData.full_name }} <br>
+        {{ secretData.email }} <br>
+        {{ secretData.phone }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

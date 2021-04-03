@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-img src="../../assets/icon/truq_logo.png"></ion-img>
+      <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="input-group">
+          <ion-item>
+            <ion-label position="floating">Phone</ion-label>
+            <ion-intl-tel-input formControlName="phone" [preferredCountries]="preferredCountries" selectFirstCountry defaultCountryiso="ng">
+            </ion-intl-tel-input>
+          </ion-item>
+          <div *ngIf="phone.invalid && phone.touched">
+            <ion-text color="danger" *ngIf="phone.errors.required">
+              <p class="ion-no-margin"><sub>Phone is required.</sub></p>
+            </ion-text>
+            <ion-text color="danger" *ngIf="phone.errors.phone">
+              <p class="ion-no-margin"><sub>Phone number is not valid.</sub></p>
+            </ion-text>
+          </div>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </div>
+
+        <ion-button type="submit" expand="block" size="large" [disabled]="!loginForm.valid">Log in</ion-button>
+        <ion-button type="button" fill="clear" expand="block" routerLink="/reset-password">Reset Password</ion-button>
+        <ion-button type="button" fill="clear" expand="block" routerLink="/register">Register</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
